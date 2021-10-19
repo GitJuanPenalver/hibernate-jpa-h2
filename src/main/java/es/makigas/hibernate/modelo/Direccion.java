@@ -2,7 +2,9 @@ package es.makigas.hibernate.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -32,7 +34,18 @@ public class Direccion {
         this.provincia = provincia;
         this.pais = pais;
     }
+    @OneToOne(mappedBy = "direccion", fetch = FetchType.LAZY)
+    private Empleado empleado;
 
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+    
+    
     public Direccion() {
     }
 
@@ -42,7 +55,7 @@ public class Direccion {
 
     @Override
     public String toString() {
-        return "Direccion{" + "id=" + id + ", direccion=" + direccion + ", localidad=" + localidad + ", provincia=" + provincia + ", pais=" + pais + '}';
+        return "Direccion{" + "id=" + id + ", direccion=" + direccion + ", localidad=" + localidad + ", provincia=" + provincia + ", pais=" + pais + ", empleado=" + empleado + '}';
     }
 
     public Long getId() {

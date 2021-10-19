@@ -26,9 +26,7 @@ public class TestEmpleados {
         Empleado e = manager.find(Empleado.class, 10L);
         e.setNombre("David");
         e.setDireccion(new Direccion(15L, "Calle Falsa, 123", "Springfield", "Springfield", "EEUU"));
-//        manager.merge(e);
         manager.getTransaction().commit();
-
         imprimirTodo();
 
     }

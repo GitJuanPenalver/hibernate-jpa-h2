@@ -2,7 +2,6 @@ package es.makigas.hibernate.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -88,8 +87,4 @@ public class Empleado implements Serializable {
     public String toString() {
         return "Empleado{" + "codigo=" + codigo + ", apellidos=" + apellidos + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + '}';
     }
-
-    
-
-
 }
